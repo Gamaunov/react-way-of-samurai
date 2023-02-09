@@ -1,0 +1,26 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  background-color: #71bd3f;
+  padding: 20px;
+}
+
+.dialogs__items {
+}
+
+.dialogs__item {
+  padding: 10px;
+}
+.dialogs__item:hover {
+  color: deeppink;
+}
+.dialogs__item--active {
+  color: darkgreen;
+}
+
+.dialogs__messages {
+}
+
+.dialogs__message {
+  padding: 10px;
+}

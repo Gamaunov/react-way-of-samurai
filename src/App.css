@@ -1,0 +1,17 @@
+@import url(./_normalize.css);
+body {
+  background-color: rgb(247, 255, 252);
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav content content";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+}
+.app-wraper__content {
+  grid-area: content;
+  background-color: rgb(255, 255, 255);
+}

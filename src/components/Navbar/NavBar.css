@@ -1,0 +1,20 @@
+.nav {
+  grid-area: nav;
+  color: cornsilk;
+  background-color: #243413;
+  padding: 20px;
+}
+.nav__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.nav__content-item {
+  grid-area: content;
+}
+.nav__content-item:hover {
+  color: rgb(119, 71, 0);
+}
+.nav__content-item:active {
+  color: rgb(231, 6, 247);
+}

@@ -1,0 +1,21 @@
+.content__posts {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.content__post {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  background-color: #fdfffc;
+}
+.content__post-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.content__likes {
+  margin-left: 10px;
+}
