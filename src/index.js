@@ -1,5 +1,6 @@
 import React from "react";
-import state, { addPost, subscribe, updateNewPostText } from "./redux/state";
+// import state, { addPost, subscribe, updateNewPostText } from "./redux/state";
+import store from "./redux/state";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -11,14 +12,13 @@ let rerenderEntireTree = (state) => {
     <React.StrictMode>
       <App
         state={state}
-        addPost={addPost}
-        updateNewPostText={updateNewPostText}
+        dispatch={store.dispatch.bind(store)}
       />
     </React.StrictMode>
   );
 };
 
-rerenderEntireTree(state);
-subscribe(rerenderEntireTree);
+rerenderEntireTree(store.getState());
+store.subscribe(rerenderEntireTree);
 
 reportWebVitals();
