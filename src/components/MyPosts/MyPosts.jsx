@@ -30,7 +30,7 @@ const MyPosts = (props) => {
           value={props.newPostText}
         />
         <button className="content__btn" onClick={onAddPost}>
-          button
+          Add Post
         </button>
       </div>
       <div className="content__posts">{postsElements}</div>
