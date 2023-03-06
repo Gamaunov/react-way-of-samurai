@@ -5,13 +5,13 @@ import "./MyPosts.css";
 
 const MyPosts = (props) => {
   let postsElements = props.posts.map((p) => (
-    <Post message={p.message} likesCount={p.likesCount} />
+    <Post key={p.id} message={p.message} likesCount={p.likesCount} />
   ));
 
   let newPostElement = React.createRef();
 
   let onAddPost = () => {
-    props.addPosts();
+    props.addPosts()
   };
 
   let onPostChange = () => {
