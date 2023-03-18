@@ -2,6 +2,7 @@ import React from "react";
 import "./Dialogs.css";
 import DialogItem from "./DialogItem/DialogItem.jsx";
 import Message from "./Message/Message.jsx";
+import Button from "../IUElements/button/Button";
 
 const Dialogs = (props) => {
   let state = props.dialogsPage
@@ -33,9 +34,7 @@ const Dialogs = (props) => {
             </textarea>
           </div>
           <div>
-            <button onClick={onSendMessageClick}>
-              Send
-            </button>
+            <Button onClick={onSendMessageClick} text={'Send'} />
           </div>
         </div>
       </div>

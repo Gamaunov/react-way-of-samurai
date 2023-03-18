@@ -1,6 +1,7 @@
 import React from "react";
 import Post from "./Post/Post";
 import "./MyPosts.css";
+import Button from "../IUElements/button/Button";
 
 
 const MyPosts = (props) => {
@@ -29,9 +30,10 @@ const MyPosts = (props) => {
           onChange={onPostChange}
           value={props.newPostText}
         />
-        <button className="content__btn" onClick={onAddPost}>
-          Add Post
-        </button>
+        {/*<button className="content__btn" onClick={onAddPost}>*/}
+        {/*  Add Post*/}
+        {/*</button>*/}
+        <Button onClick={onAddPost} text={'Add Post'}/>
       </div>
       <div className="content__posts">{postsElements}</div>
     </div>

@@ -1,58 +1,31 @@
 import React from "react";
 import styles from "./Users.module.css";
-import photoPerson_1 from "../../img/person/1.jpg";
-import photoPerson_2 from "../../img/person/2.jpg";
-import photoPerson_3 from "../../img/person/3.jpg";
-import photoPerson_4 from "../../img/person/4.jpg";
+import defaultPhoto from "../../assets/images/user-default.svg";
+import axios from "axios";
+import Button from "../IUElements/button/Button";
 
 const Users = (props) => {
-  if (props.users.length === 0) {
-    props.setUsers([
-      {
-        id: 1,
-        photoUrl: photoPerson_1,
-        followed: false,
-        fullName: "Danny",
-        status: "hey what`s your twenty",
-        location: { city: "Belgorod", country: "Russia" },
-      },
-      {
-        id: 2,
-        photoUrl: photoPerson_2,
-        followed: true,
-        fullName: "Polina",
-        status: "hey what`s your fifty",
-        location: { city: "Sevastopol", country: "Russia" },
-      },
-      {
-        id: 3,
-        photoUrl: photoPerson_3,
-        followed: false,
-        fullName: "Evgeniya",
-        status: "hey what`s your cat",
-        location: { city: "Paris", country: "France" },
-      },
-      {
-        id: 4,
-        photoUrl: photoPerson_4,
-        followed: false,
-        fullName: "Maria",
-        status: "hey what`s your dog",
-        location: { city: "California", country: "Russia" },
-      },
-    ]);
+  let getUsers = () => {
+    if (props.users.length === 0) {
+      axios
+        .get("https://social-network.samuraijs.com/api/1.0/users")
+        .then((response) => {
+          props.setUsers(response.data.items);
+        });
+    }
   }
 
   return (
     <div>
+      <Button onClick={getUsers} text={'Get Users'} />
       {props.users.map((u) => (
-        <div>
+        <div key={u.id}>
           <span>
             <div>
               <img
                 alt="It`s me"
                 className={styles.userPhoto}
-                src={u.photoUrl}
+                src={u.photos.small != null ? u.photos.small : defaultPhoto}
               />
             </div>
             <div>
@@ -65,12 +38,12 @@ const Users = (props) => {
           </span>
           <span>
             <span>
-              <div>{u.fullname}</div>
+              <div>{u.name}</div>
               <div>{u.status}</div>
             </span>
             <span>
-              <div>{u.location.country}</div>
-              <div>{u.location.city}</div>
+              <div>{"u.location.country"}</div>
+              <div>{"u.location.city"}</div>
             </span>
           </span>
         </div>
