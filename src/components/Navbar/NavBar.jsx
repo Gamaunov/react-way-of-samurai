@@ -13,6 +13,9 @@ const NavBar = () => {
           <NavLink to="/profile">Profile</NavLink>
         </li>
         <li className="nav__content-item">
+          <NavLink to="/users">Users</NavLink>
+        </li>
+        <li className="nav__content-item">
           <NavLink to="#q">Settings</NavLink>
         </li>
       </ul>
