@@ -4,3 +4,24 @@
     border-radius: 50%;
     object-fit: cover; 
 }
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+    background-color: teal;
+    color: white;
+    border-radius: 10px;
+    width: 120px;
+    padding: 5px 10px;
+    margin: 5px;
+    overflow: hidden;
+}
+.pagination span {
+    cursor: pointer;
+}.pagination span:hover {
+   text-decoration: underline;
+}
+.selectedPage{
+    font-weight: bold;
+}
