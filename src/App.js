@@ -3,9 +3,9 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import NavBar from "./components/Navbar/NavBar";
-import Profile from "./components/Profile/Profile";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileInfo/ProfileContainer";
 
 const App = (props) => {
   return (
@@ -22,8 +22,7 @@ const App = (props) => {
             <Route
               path="/profile/*"
               element={
-                <Profile
-                  store={props.store}
+                <ProfileContainer
                 />
               }
             />
